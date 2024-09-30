@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="./css/sakura.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <p id="user"></p>
+
+    <h1>Type your task</h1>
+    <input id="newTaskInput" type="text" />
+    <button id="createButton">create</button>
+
+    <h4>Your tasks:</h4>
+
+    <label class="filterByStatus" for="filter">Filter by status:</label>
+    <select name="filter" id="filterByStatus" class="filter">
+      <option value="choose">-- Choose --</option>
+      <option value="all">All</option>
+      <option value="created">Created</option>
+      <option value="started">Started</option>
+      <option value="completed">Completed</option>
+    </select>
+    <ul id="tasksList"></ul>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/printAllTasks.js"></script>
+  </body>
+</html>
