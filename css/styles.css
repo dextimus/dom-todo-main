@@ -40,7 +40,8 @@ ul {
   gap: 2px;
 }
 
-#newTaskInput {
+#newTaskInput,
+#seachTaskInput {
   border: 1px solid #1d7484;
 }
 
@@ -55,4 +56,11 @@ ul {
   font-size: x-large;
   background-color: rgb(2, 63, 63);
   border-radius: 100%;
+}
+
+div {
+  display: inline-block;
+}
+.searchTask {
+  padding-left: 10em;
 }
