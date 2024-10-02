@@ -40,8 +40,8 @@ ul {
   gap: 2px;
 }
 
-#newTaskInput,
-#seachTaskInput {
+.newTask-Input,
+.searchTask-Input {
   border: 1px solid #1d7484;
 }
 
@@ -58,7 +58,8 @@ ul {
   border-radius: 100%;
 }
 
-div {
+.searchTask,
+.newTask {
   display: inline-block;
 }
 .searchTask {

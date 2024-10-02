@@ -20,7 +20,7 @@ function printAllTasks() {
       return singleTask.status === filterStatus;
     })
     .filter((seachedTask) => {
-      if (searchInput === " " || !searchInput) return true;
+      if (!searchInput) return true;
       return seachedTask.title.toLowerCase().includes(searchInput.toLowerCase());
     })
     .forEach((task) => {

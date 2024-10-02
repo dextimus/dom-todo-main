@@ -29,5 +29,6 @@ printUser();
 document
   .getElementById("searchButton")
   .addEventListener("click", () => {
-    searchTask(printAllTasks);
+    searchTask();
+    printAllTasks();
   });

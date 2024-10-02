@@ -1,6 +1,6 @@
-import {data } from "./data.js";
 
-function searchTask(printAllTasks) {
+
+function searchTask() {
   const searchedTask = document.getElementById("seachTaskInput").value;
 
   if (!searchedTask.trim().length) {
@@ -8,11 +8,6 @@ function searchTask(printAllTasks) {
     document.getElementById("seachTaskInput").value = "";
     return;
   }
-  const filteredTasks = data.tasks.filter((task) => {
-    return task.title.toLowerCase().includes(searchedTask.toLowerCase());
-  });
-  printAllTasks(filteredTasks);
-  console.log(filteredTasks)
 }
 
 export { searchTask };
