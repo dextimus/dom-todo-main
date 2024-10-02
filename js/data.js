@@ -68,3 +68,4 @@ export const data = {
 };
 
 data.getTasks();
+
