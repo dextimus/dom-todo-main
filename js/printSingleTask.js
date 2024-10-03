@@ -1,19 +1,25 @@
 import { data } from "./data.js";
-import {
-  getStatusButtonLabel,
-  getTaskNextStatus,
-} from "./helpers/statusButtonHelpers.js";
+import { getStatusButtonLabel, getTaskNextStatus } from "./helpers/statusButtonHelpers.js";
 
 function printSingleTask(task, printAllTasks) {
   const taskLi = document.createElement("li");
   const deleteButton = document.createElement("button");
   const statusButton = document.createElement("button");
   const buttonContainer = document.createElement("div");
+  const taskContainer = document.createElement("div");
+  const dateContainer = document.createElement("div");
+  const commonContainer = document.createElement("div");
 
   const statusButtonLabel = getStatusButtonLabel(task.status);
 
+
+  const myDate = new Date(task.createdAt).toLocaleString("en-GB");
+
   // text content
-  taskLi.textContent = task.title;
+  taskContainer.textContent = task.title;
+  dateContainer.textContent = myDate;
+
+
   deleteButton.textContent = "Delete";
   statusButton.textContent = statusButtonLabel;
 
@@ -25,9 +31,11 @@ function printSingleTask(task, printAllTasks) {
   if (task.status === "completed") {
     taskLi.classList.add("task--completed");
   }
-  // deleteButton.classList.add("deleteButton");
-  // statusButton.classList.add("statusButton");
+
   buttonContainer.classList.add("buttonContainer");
+  taskContainer.classList.add("taskContainer");
+  dateContainer.classList.add("dateContainer");
+  commonContainer.classList.add("commonContainer");
 
   statusButton.addEventListener("click", () => {
     data.changeTaskStatus(task.id, getTaskNextStatus(task.status));
@@ -44,22 +52,14 @@ function printSingleTask(task, printAllTasks) {
     buttonContainer.appendChild(statusButton);
   }
 
+  commonContainer.appendChild(dateContainer);
+  commonContainer.appendChild(taskContainer);
+  taskLi.appendChild(commonContainer);
   buttonContainer.appendChild(deleteButton);
   taskLi.appendChild(buttonContainer);
+
   document.getElementById("tasksList").appendChild(taskLi);
 
-  // function handleStatusChange(task) {
-  //   console.log(task);
-  //   data.changeTaskStatus(task.id, getTaskNextStatus(task.status));
-
-  // }
-
-  //   function handleDelete(id) {
-  //     const newTasks = data.tasks.filter((task) => task.id !== id);
-  //     data.setTasks(newTasks);
-
-  //     console.log(newTasks);
-  //   }
 }
 
 export { printSingleTask };
