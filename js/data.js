@@ -62,10 +62,10 @@ export const data = {
       id: crypto.randomUUID(),
       title: title,
       status: "created",
+      createdAt: new Date().getTime(),
     });
     this.setTasks();
   },
 };
 
 data.getTasks();
-

@@ -2,9 +2,9 @@ import { createNewTask } from "./createTask.js";
 import { printAllTasks } from "./printAllTasks.js";
 import { printUser } from "./printUser.js";
 import { searchTask } from "./searchTask.js";
+import { sortByDate } from "./sorting.js";
 
 export let filterStatus = "all";
-
 
 document.getElementById("createButton").addEventListener("click", () => {
   createNewTask();
@@ -26,9 +26,13 @@ document.getElementById("filterByStatus").addEventListener("change", () => {
 printAllTasks();
 printUser();
 
-document
-  .getElementById("searchButton")
-  .addEventListener("click", () => {
-    searchTask();
-    printAllTasks();
-  });
+document.getElementById("searchButton").addEventListener("click", () => {
+  searchTask();
+  printAllTasks();
+});
+
+document.getElementById("sortByDate").addEventListener("change", () => {
+  const sortStatus = document.getElementById("sortByDate").value;
+  sortByDate(sortStatus);
+  printAllTasks();
+});

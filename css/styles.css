@@ -3,8 +3,14 @@
   padding: 1rem 0;
 }
 
-.filter {
+.filter,
+.sorting {
   border: solid 1px #1d7484;
+}
+
+button {
+  cursor: pointer;
+  width: 80px;
 }
 
 ul {
@@ -64,4 +70,20 @@ ul {
 }
 .searchTask {
   padding-left: 10em;
+}
+
+.commonContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.dateContainer {
+  font-size: small;
+  font-weight: bold;
+  color: blue;
+}
+
+.taskContainer {
+  font-weight: bold;
+  font-size: 20px;
 }

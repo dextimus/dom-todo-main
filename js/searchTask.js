@@ -1,5 +1,3 @@
-
-
 function searchTask() {
   const searchedTask = document.getElementById("seachTaskInput").value;
 
